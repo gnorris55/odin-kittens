@@ -1,0 +1,10 @@
+<h2>All kittens</h2>
+
+<% @kittens.each do |kitten|%>
+    <h3>name: <%= kitten.name %></li></h3>
+    <%= render :partial => 'kitten_info', :locals => { :kitten => kitten } %>
+    <p>
+        <%= link_to 'view', kitten_path(kitten.id)%> or 
+        <%= link_to 'destroy', kitten_path(kitten.id), method: :delete%> <%= kitten.name %>
+    </p>
+<% end %>
