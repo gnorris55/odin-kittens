@@ -1,0 +1,13 @@
+<%= form_for @owner do |owner|%>
+    <table style="text-align: center">
+        <tr class="name">
+            <td><%= owner.label "name: "%></td>
+            <td><%= owner.text_field :name%></td>
+        </tr>
+
+        <tr class="submit">
+            <td></td>
+            <td><%= owner.submit "create owner"%></td>
+        </tr>
+    </table>
+<% end %>

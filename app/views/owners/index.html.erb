@@ -1,0 +1,13 @@
+<h2>owners and their kittens</h2>
+
+<% @owners.each do |owner|%>
+    <div class="owner-name"><%= link_to owner.name, owner_path(owner.id) %>'s cats</div> <br>
+        <table class="cat-owners" style="text-align: center;">
+            <% owner.kittens.each do |kitten|%>
+                <div>
+                    <tr><th class="kitten-name"><%= link_to kitten.name, kitten_path(kitten.id) %></th></tr>
+                </div> 
+            <% end %>
+        </table>
+        <br>
+<% end %>

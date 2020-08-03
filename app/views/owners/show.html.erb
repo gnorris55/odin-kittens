@@ -1,0 +1,21 @@
+<h2><%= @owner.name %></h2>
+
+<table class="kitten-info">
+    <tr>
+        <th class="kitten-contents">id</th>
+        <th class="kitten-contents">name</th>
+        <th class="kitten-contents">age</th>
+        <th class="kitten-contents">cuteness_scale</th>
+        <th class="kitten-contents">softness_scale</th>
+    </tr>
+    <tr><th></th></tr>
+    <% @owner.kittens.each do |kitten|%>
+        <tr>
+            <th class="kitten-contents"><%= kitten.id %> </th>
+            <th class="kitten-contents"><%= kitten.name %> </th>
+            <th class="kitten-contents"><%= kitten.age %> </th>
+            <th class="kitten-contents"><%= kitten.cuteness_scale %> </th>
+            <th class="kitten-contents"><%= kitten.softness_scale %> </th>
+        </tr>
+    <% end %>
+</table>

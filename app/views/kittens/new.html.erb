@@ -1,3 +1,13 @@
 <h2>New Kitten</h2>
 
 <%= render :partial => 'form'%>
+
+<br>
+<div class="owners">
+    <table class="user-id">
+        <tr class="user-contents" ><th>name</th ><th><th>id</th></th></tr>
+        <% @potential_owners.each do |owner|%>
+            <tr><th><%= owner.name %></th> <th>=></th> <th><%= owner.id %></th></tr>
+        <% end %>
+    </table>
+</div>

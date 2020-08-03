@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+body
+{
+   font-family: 'Recursive', sans-serif;
+}
+.kitten-info
+{
+   text-align: center;
+   border: 1px solid cornflowerblue;
+   background-color: black;
+}
+.kitten-contents
+{
+   border: 1px solid cornflowerblue;
+   color: cornflowerblue;
+}
+.kitten-name
+{ 
+   border: 1px solid black;
+}
+.user-id
+{
+   text-align: center;
+   border: 1px solid cornflowerblue;
+   border-spacing: 20px;
+}
+.user-contents
+{
+   text-decoration: underline;
+}
+
+
