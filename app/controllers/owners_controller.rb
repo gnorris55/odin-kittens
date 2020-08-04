@@ -18,8 +18,14 @@ class OwnersController < ApplicationController
 
     def confirm_adopt
         @owner = Owner.find(params[:id])
-        @owner.kittens << Kitten.find(params[:kitten_id])
-        @owner.save
+        if @owner.kittens.all.find_by(id: params[:kitten_id]).present?
+            redirect_to adopt_path(@owner.id)
+        else 
+            @owner.kittens << Kitten.find(params[:kitten_id])
+            redirect_to owner_path(params[:id])
+        end
+        
+
     end
 
     def create

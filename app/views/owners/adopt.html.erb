@@ -1,7 +1,12 @@
 <h2>adopt cat</h2>
-
-<%= form_with(url: confirm_adopt_path(@owner.id), method: 'get') do %>
+<%= flash[:adopted]%>
+<%= form_with(url: confirm_adopt_path(@owner.id), method: 'get', local: true) do %>
     <%= label_tag "kittens available: "%>
     <%= select_tag(:kitten_id, options_for_select(@kitten_options))%>
     <%= submit_tag("adopt kitten")%>
+<% end %>
+
+<h3>your cats:</h3>
+<% @owner.kittens.each do |kitten|%>
+    <p><%= kitten.name%></p>
 <% end %>
