@@ -11,6 +11,17 @@ class OwnersController < ApplicationController
         @owner = Owner.new
     end
 
+    def adopt
+        @owner = Owner.find(params[:id])
+        @kitten_options = Kitten.all.map{ |k| [ k.name, k.id ] }
+    end
+
+    def confirm_adopt
+        @owner = Owner.find(params[:id])
+        @owner.kittens << Kitten.find(params[:kitten_id])
+        @owner.save
+    end
+
     def create
         @owner = Owner.new(owner_params)
 

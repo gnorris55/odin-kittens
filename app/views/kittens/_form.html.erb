@@ -1,4 +1,3 @@
-<%= flash[:errors]%>
 <%= form_for @kitten do |kitten|%>
     <table style="text-align: center">
         <tr class="name">
@@ -19,11 +18,6 @@
         <tr class="softness-scale" >
             <td><%= kitten.label "softness: "%></td>
             <td><%= kitten.number_field :softness_scale%></td>
-        </tr>
-
-        <tr class="softness-scale" >
-            <td><%= kitten.label "owner_id: "%></td>
-            <td><%= kitten.number_field :owner_id%></td>
         </tr>
 
         <tr class="submit">
