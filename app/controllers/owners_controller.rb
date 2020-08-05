@@ -24,23 +24,26 @@ class OwnersController < ApplicationController
             @owner.kittens << Kitten.find(params[:kitten_id])
             redirect_to owner_path(params[:id])
         end
-        
-
     end
 
     def create
         @owner = Owner.new(owner_params)
 
         if @owner.save
+            OwnerMailer.welcome_email(@owner).deliver_now
             redirect_to owner_path(@owner.id)
         else
             redirect_to new_owner_path
         end
     end
 
+    def send_stats
+        @owner = Owner.find(params[:id])
+        OwnerMailer.update_email(@owner).deliver_now
+    end 
     private 
     def owner_params
-        params.require(:owner).permit(:name)
+        params.require(:owner).permit(:name, :email)
     end
     
 end

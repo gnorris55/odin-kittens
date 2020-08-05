@@ -5,6 +5,11 @@
             <td><%= owner.text_field :name%></td>
         </tr>
 
+        <tr class="email">
+            <td><%= owner.label "email: "%></td>
+            <td><%= owner.text_field :email%></td>
+        </tr>
+
         <tr class="submit">
             <td></td>
             <td><%= owner.submit "create owner"%></td>

@@ -4,4 +4,9 @@ class OwnerMailerPreview < ActionMailer::Preview
         owner = Owner.first
         OwnerMailer.welcome_email(owner)
     end
+
+    def update_email
+        owner = Owner.first
+        OwnerMailer.update_email(owner)
+    end 
 end

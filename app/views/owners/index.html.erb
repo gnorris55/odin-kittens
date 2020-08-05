@@ -1,7 +1,7 @@
 <h2>owners and their kittens</h2>
 
 <% @owners.each do |owner|%>
-    <div class="owner-name"><%= link_to owner.name, owner_path(owner.id) %>'s cats</div> <br>
+    <div class="owner-name"><%= link_to owner.name, owner_path(owner) %>'s cats</div> <br>
         <table class="cat-owners" style="text-align: center;">
             <% owner.kittens.each do |kitten|%>
                 <div>
@@ -9,5 +9,7 @@
                 </div> 
             <% end %>
         </table>
+        <small>email: <%= owner.email %></small>,  
+        <small><%= link_to 'send kitten stats', send_stats_path(owner) %> </small><br>
         <br>
 <% end %>

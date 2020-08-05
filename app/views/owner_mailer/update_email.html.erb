@@ -1,0 +1,14 @@
+<h3>an update on your kittens, <%= @owner.name%></h3>
+
+<table>
+    <tr><th>name</th><th>age</th><th>softness scale</th><th>cuteness scale</th></tr>
+    <% @owner.kittens.each do |kitten|%>
+        <tr>
+            <th><%= kitten.name%></th>
+            <th><%= kitten.age%></th>
+            <th><%= kitten.softness_scale%></th>
+            <th><%= kitten.cuteness_scale%></th>
+        </tr>
+    <% end %>
+    </table>
+
