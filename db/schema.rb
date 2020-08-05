@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_001744) do
+ActiveRecord::Schema.define(version: 2020_08_04_192009) do
 
   create_table "kitten_memberships", force: :cascade do |t|
     t.integer "kitten_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_08_04_001744) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
   end
 
 end

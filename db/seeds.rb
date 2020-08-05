@@ -1,11 +1,11 @@
 Kitten.destroy_all
 Owner.destroy_all
 
-Owner.create(name: "Graeme")
-Owner.create(name: "Evan")
-Owner.create(name: "Bob")
-Owner.create(name: "Stephany")
-Owner.create(name: "Joe")
+Owner.create(name: "Graeme", email: "gnorris@alumni.shawnigan.ca")
+Owner.create(name: "Evan", email: "evannorris99@gmail.com")
+Owner.create(name: "Bob", email: "bob@thegoodearth.ca")
+Owner.create(name: "Stephany", email: "")
+Owner.create(name: "Joe", email: "gmanthefan123@gmail.com")
 
 @owners = Owner.all
 
